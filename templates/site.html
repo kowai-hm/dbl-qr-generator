@@ -1,0 +1,11 @@
+<h1><b>Générateur de codes QR - Dragon Ball Legends</b></h1>
+
+<form method="POST" action="/">
+	<label for="friend_code">Code ami</label>
+	<input type="text" id="friend_code" required></input>
+	<button>Générer</button>
+</form>
+
+{% if qr is not none %}
+<img src={{"data:image/png;base64," + qr}}></img>
+{% endif %}
