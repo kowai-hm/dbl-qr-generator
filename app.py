@@ -25,7 +25,7 @@ def welcome():
         Crédit à https://www.reddit.com/r/DragonballLegends/comments/gtzl9t/hey_guys_i_cracked_this_years_qr_code/ pour l'explication initiale.
         """
         transformed_timestamp = ''.join([chr(ord('A') + int(digit)) for digit in str(int(datetime.now().timestamp()*1000))])
-        img = qrcode.make(f"4,{friend_code},{transformed_timestamp}")
+        img = qrcode.make(f"4,{friend_code.lower()},{transformed_timestamp}")
         buffered = BytesIO()
         img.save(buffered, format="PNG")
         qr = base64.b64encode(buffered.getvalue()).decode("utf-8")
